@@ -1,0 +1,9 @@
+<launch>
+	<!--- Launch 3: This launch file only executes the robots and gazebo, the parameters will be given in python node -->
+
+	<node pkg="stage_ros" name="stageros" type="stageros" args="$(find beginnertutorials)/world/worldfile.world" output="screen"/>
+	<node pkg="beginner_msgsrv" name="tb0" args="0" type="finalproject_task2.py"/>
+
+	<node pkg="beginner_msgsrv" name="tb1" args="1" type="finalproject_task2.py"/>
+
+</launch>
