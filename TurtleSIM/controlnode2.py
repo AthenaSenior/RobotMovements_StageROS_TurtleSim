@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-#18070006024 - Midterm Project Source Code for Turtle 2
+#Source Code for Turtle 2
 #chmod u+x catkin_ws/src/beginnertutorials/controlnode2.py
 
 import rospy
