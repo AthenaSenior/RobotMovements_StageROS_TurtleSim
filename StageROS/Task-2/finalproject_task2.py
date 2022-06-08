@@ -1,6 +1,6 @@
 #!/usr/bin/env python
-#18070006024 Final Project Task 2
-#chmod u+x catkin_ws/src/beginner_msgsrv/finalproject_task2.py
+# Task 2
+#chmod u+x catkin_ws/src/beginner_msgsrv/task2.py
 
 import rospy
 import sys
