@@ -1,6 +1,0 @@
-<launch>
-	<node pkg="stage_ros" name="stageros" type="stageros" args="$(find beginnertutorials)/world/worldfile.world" output="screen"/>
-	
-	<node pkg="beginnertutorials" name="robot0" args="0" type="finalproject_task1.py"/>
-	<node pkg="beginnertutorials" name="robot1" args="1" type="finalproject_task1.py"/>
-</launch>
