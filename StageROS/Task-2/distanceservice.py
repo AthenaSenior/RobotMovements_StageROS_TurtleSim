@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-#18070006024 Final Project Task 2
+#Task 2
 # movetogoal Service Node
 
 import rospy
