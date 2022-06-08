@@ -7,8 +7,8 @@
 	<param name = "goalposey_r2" value = "-4"/>
 
 	<node pkg="stage_ros" name="stageros" type="stageros" args="$(find beginnertutorials)/world/worldfile.world" output="screen"/>
-	<node pkg="beginner_msgsrv" name="robot0" args="0" type="finalproject_task2.py"/>
-	<node pkg="beginner_msgsrv" name="robot1" args="1" type="finalproject_task2.py"/>
+	<node pkg="beginner_msgsrv" name="robot0" args="0" type="task2.py"/>
+	<node pkg="beginner_msgsrv" name="robot1" args="1" type="task2.py"/>
 	
 
 </launch>
