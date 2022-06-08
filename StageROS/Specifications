@@ -1,0 +1,49 @@
+Specifications
+
+Task 1
+
+Create a ROS Python node (projecttask1.py) to execute the motion in Figure 1 for two robots in
+ROS Stage. The starting points of the robots are shown in the figure. The robots are initially facing up direction.
+The arrows show the directions that the robot moves. The distance that the robot travels in left/right
+directions is the same. Motion-plan: Both robots start moving up until they detect the wall with their sensors;
+then they turn left/right, and then move down/up until they detect the wall again with their sensors. This
+motion pattern is executed by each robot three times (i.e. for three rounds). After three rounds, the robots
+should stop facing down. The robots should always face the directions that they move. The y-axis of the robots’
+starting locations is 1.
+Create a launch file (projecttask1.launch) that starts this Python node for both robots and the ROS Stage. In
+your world file, you can set the image of the environment as a closed environment that does not any include
+obstacles (see Figure 1). You should use the robots’ sensors so that the robots do not hit the walls. You can
+define a fixed distance for the robot when it is traveling in left or right direction (i.e. in the x axis). However,
+do not define a fixed distance for the robot when it is traveling in up or down direction (i.e. in the y axis). This
+should be controlled by the robots’ sensors. That is, the robot should understand when it should turn
+left/right.
+
+
+Task 2
+
+The goal in this task is to move the robot to a goal point in ROS Stage and Gazebo (with Turtlebot3
+Burger robots). In Stage, there will be two robots in the environment. The goal points will be determined in 3 ways and each way should be separately tested. 
+Recall that we created a ROS Python node “movetogoal.py” in the lecture as an exercise. You should modify this code so that the robot can
+move to a goal position in ROSStage or Gazebo. The node should subscribe to the “/odom” topic
+(nav_msgs/Odometry message) to get the updated position data of the robot while it moves. Name your file
+as “projecttask2.py”.
+Ways to determine the goal points:
+1. Way-1: Create a launch file named “task2launch1.launch” that includes the robots’ goal point parameters
+(goalX_r1 (float), goalY_r1(float), goalX _r2 (float), and goalY_r2(float)), also runs ROS Stage and
+“projecttask2.py” node for both robots. The code should send the first robot to the goal point (goalX_r1,
+goalY_r1), and the second robot to the goal point (goalX_r2, goalY_r2).
+2. Way-2: Create a launch file named “task2launch2.launch” that recevies the goal point parameters from a
+YAML file and runs ROS Stage and the “projecttask2.py” node for both robots. The YAML file will include
+the parameters goalX_r1 (float), goalY_r1(float), goalX _r2 (float), and goalY_r2(float). The code should
+send the first robot to the goal point (goalX_r1, goalY_r1), and the second robot to the goal point
+(goalX_r2, goalY_r2).
+3. Way-3: Create a launch file named “task2launch3.launch” that only runs the “projecttask2.py” node for
+both robots. In way-3, give fixed goal point values in “projecttask2.py” node. For example: goalX_r1 = 2,
+goalY_r1 =2, goalX_r2 = 4, and goalY_r2 =4.
+This task of your project should also include the following:
+ Create a service (in Python named “distanceservice.py”) that does the task of the “euclidean_distance”
+function in “projecttask2.py” code. The service requires 4 float parameters representing the coordinates of
+two points and returns the euclidean distance between these points. Call this service in the
+“euclidean_distance” function of your node to calculate the euclidean distance between the robot’s current
+position and the goal position. Instead of using the line “return sqrt(...)” in the euclidean_distance function,
+now call your new service in this function and return the result that the service provides.
