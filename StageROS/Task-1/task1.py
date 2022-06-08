@@ -1,6 +1,5 @@
 #!/usr/bin/env python
-#18070006024 Final Project Task 1
-#Egemen ONER
+#Task 1
 #chmod u+x catkin_ws/src/beginnertutorials/finalproject_task1.py
 
 import rospy
